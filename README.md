@@ -14,6 +14,8 @@ Until Windows viewers get their SOCKS 5 support unbroken by someone, maybe you?
 
 Download https://github.com/SaladDais/WinHippoAutoProxy/releases and extract it into the directory containing your viewer EXE. Launch WinHippoAutoProxy.exe instead of your viewer exe, WinHippoAutoProxy will launch it for you.
 
+If any proxy is configured in the viewer, then disable it. It will conflict with WinHippoAutoProxy.
+
 # How
 
 It intercepts all relevant non-DNS UDP socket send/recv calls and adds or removes a SOCKS header as necessary. These were used to write it:
