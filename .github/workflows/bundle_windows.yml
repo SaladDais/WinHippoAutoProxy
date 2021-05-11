@@ -1,0 +1,42 @@
+name: Make Windows Bundle
+
+on:
+  # Only trigger on release creation
+  release:
+    types:
+      - created
+  workflow_dispatch:
+
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Run CMake
+      run: |
+        mkdir build
+        cd build
+        cmake -G "Visual Studio 16 2019" ..
+
+    - name: Build with CMake
+      run: |
+        cd build
+        cmake --build .
+        copy bin\\DEBUG\\WinHippoAutoProxy.exe ..\\
+        copy bin\\DEBUG\\socks5udphooker.dll ..\\
+
+    - name: Upload the artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: WinHippoAutoProxy-${{ github.sha }}
+        path: |
+          WinHippoAutoProxy.exe
+          socks5udphooker.dll
+          README.md
+          LICENSE

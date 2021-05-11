@@ -21,6 +21,14 @@ It intercepts all relevant non-DNS UDP socket send/recv calls and adds or remove
 * https://github.com/microsoft/Detours
 * https://github.com/0xeb/detours-cmake
 
+To build it yourself open the folder in Visual Studio 2019 or
+
+```
+mkdir build
+cmake -G "Visual Studio 16 2019" ..
+cmake --build .
+```
+
 # ?
 
 It sucks. Please don't fix it. Fix the viewer so this isn't necessary.
