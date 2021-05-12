@@ -30,6 +30,9 @@ jobs:
         cmake --build .
         copy bin\\DEBUG\\WinHippoAutoProxy.exe ..\\
         copy bin\\DEBUG\\socks5udphooker.dll ..\\
+        copy C:\\Windows\\System32\\msvcp140d.dll ..\\
+        copy C:\\Windows\\System32\\vcruntime140d.dll ..\\
+        copy C:\\Windows\\System32\\vcruntime140_1d.dll ..\\
 
     - name: Upload the artifact
       uses: actions/upload-artifact@v2
@@ -37,6 +40,6 @@ jobs:
         name: WinHippoAutoProxy-${{ github.sha }}
         path: |
           WinHippoAutoProxy.exe
-          socks5udphooker.dll
+          *.dll
           README.md
           LICENSE
