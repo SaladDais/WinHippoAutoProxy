@@ -27,6 +27,7 @@ To build it yourself open the folder in Visual Studio 2019 or
 
 ```
 mkdir build
+cd build
 cmake -G "Visual Studio 16 2019" ..
 cmake --build .
 ```
