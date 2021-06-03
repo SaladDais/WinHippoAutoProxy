@@ -26,6 +26,7 @@ It intercepts all relevant non-DNS UDP socket send/recv calls and adds or remove
 To build it yourself open the folder in Visual Studio 2019 or
 
 ```
+git submodule update --init --recursive
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" ..
