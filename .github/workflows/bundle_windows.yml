@@ -27,7 +27,7 @@ jobs:
     - name: Build with CMake
       run: |
         cd build
-        cmake --build --config Release .
+        cmake --build . --config Release
         copy bin\\RELEASE\\WinHippoAutoProxy.exe ..\\
         copy bin\\RELEASE\\socks5udphooker.dll ..\\
         copy C:\\Windows\\System32\\msvcp140.dll ..\\
